@@ -37,12 +37,18 @@ The dataset used for this project is based on features extracted from **Portable
 
 ## Exploratory Data Analysis (EDA)
 
-- **Benign vs Malicious Files**: The dataset has a balanced distribution between benign and malicious files, ensuring proper model training without significant class imbalance.
-- **Correlation Matrix**: Reveals relationships between numerical features.
-- **CDF of DebugSize**: Shows the distribution of debug information size in the files.
-- **Distribution of MajorImageVersion**: Reveals the prevalence of specific image versions.
-- **OS Version Distribution**: Shows how benign and malicious files are distributed across different operating system versions.
-- **Number of Sections by Class**: Compares the number of sections between benign and malicious files.
+- **Benign vs Malicious Files**: The dataset has a balanced distribution between benign and malicious files, ensuring proper model training without significant class imbalance.  
+  ![Benign vs Malicious Files](images/eda-1.png)
+- **Correlation Matrix**: Reveals relationships between numerical features.  
+  ![Correlation Matrix](images/eda-2.png)
+- **CDF of DebugSize**: Shows the distribution of debug information size in the files.  
+  ![CDF of DebugSize](images/eda-3.png)
+- **Distribution of MajorImageVersion**: Reveals the prevalence of specific image versions.  
+  ![Benign vs Malicious Files](images/eda-4.png)
+- **OS Version Distribution**: Shows how benign and malicious files are distributed across different operating system versions.  
+  ![Benign vs Malicious Files](images/eda-5.png)
+- **Number of Sections by Class**: Compares the number of sections between benign and malicious files.  
+  ![Benign vs Malicious Files](images/eda-6.png)
 
 ## Methodology
 
@@ -51,18 +57,21 @@ Random Forest is an ensemble learning method that improves predictive accuracy b
 
 - **Advantages**: Reduces overfitting, provides feature importance, and improves model generalization.
 - **Feature Importance**: Random Forest helps identify the most influential features in ransomware detection.
+  ![Random Forest Confusion Matrix](images/random-forest-result.png)
 
 ### 2. Long Short-Term Memory (LSTM)
 LSTM networks are a type of Recurrent Neural Network (RNN) that excel at learning from sequences of data. LSTMs are particularly suited for capturing temporal dependencies in data, making them ideal for detecting ransomware patterns over time.
 
 - **Advantages**: Ability to capture long-term dependencies in sequential data (e.g., system events, file access behaviors).
 - **Application**: In ransomware detection, LSTMs can identify abnormal system activities indicative of ransomware behavior.
+  ![LSTM Confusion Matrix](images/lstm-result.png)
 
 ### 3. Gated Recurrent Units (GRU)
 GRUs are a simpler variant of LSTMs, offering similar performance with fewer parameters. GRUs are computationally efficient and achieve faster training times, making them suitable for real-time detection systems.
 
 - **Advantages**: Faster training, lower resource requirements, and effective at detecting temporal dependencies.
 - **Application**: GRUs are effective for identifying ransomware activities, such as sudden spikes in file encryption or unusual file system access.
+  ![GRU Confusion Matrix](images/gru-result.png)
 
 ## Results
 
